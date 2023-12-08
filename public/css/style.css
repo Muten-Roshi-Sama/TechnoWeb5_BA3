@@ -1,0 +1,13 @@
+body {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid black;
+    color : blueviolet;
+    background-color: #000;
+    color: #fff;
+}
+
+h1 {
+    text-align: center;
+}
+

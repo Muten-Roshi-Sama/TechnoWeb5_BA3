@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title>Television List</title>
+</head>
+
+<body>
+    <h1>Welcome to your list of TV's to buy.</h1>
+    <p>List of Televisions :</p>
+    <table>
+        <thead>
+            <tr>
+                <th>|_ID_  </th>
+                <th>|_Brand_  </th>
+                <!-- <th>|Dimensions </th> -->
+                <th>|_Price_</th>
+                <th>|__Bought__  </th>
+                <th>|__Broken  </th>
+                <th>|__Broken Cause  </th>
+                <th>|__Delete ?   </th>
+                <!-- <th>|__Broken ? </th>
+                <th>|__Bought ? </th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <% for (const tv of tvs) { %>
+                <tr>
+                    <td>
+                        <%= tv.id %>
+                    </td>
+                    <td>
+                        <%= tv.brand %>
+                    </td>
+                    <!-- <td>
+                        < %= tv.dimensions %>
+                    </td> -->
+                    <td>
+                        <%= tv.price %> eu
+                    </td>
+                    <td>
+                        <%= tv.bought %>
+                        <a href="/isBought/<%=tv.id%>">x</a>
+                    </td>
+                    <td>
+                        <%= tv.broken %> 
+                        <a href="/isBroken/<%=tv.id%>">x</a>
+                    </td>
+                    <td>
+                        <%= tv.brokencause %>
+                    </td>
+                    <td>
+                        <a href="/delete/<%=tv.id%>">Delete.</a>
+                    </td>
+                </tr>
+                <% } %>
+        </tbody>
+    </table>
+    <p>Money spent : <%=moneyspent %></p>
+
+<h3>Add TV</h3>
+<form action="/add" method="POST">
+    <!-- Id : 
+    <input type="text" name="Id" value="" /><br /> -->
+    Brand :
+    <input type="text" name="Brand" value="" /><br />
+    Dimensions :
+    <input type="text" name="Dimensions" value="" /><br />
+    Price :
+    <input type="text" name="Price" value="" /><br />
+    Bought ?
+    <input type="text" name="Bought" value="" /><br />
+    Broken ?
+    <input type="text" name="Broken" value="" /><br />
+    Broken cause (doesnt work...) : 
+    <input type="text" name="Cause" value="" /><br />
+
+    <input type="submit" name="Save" value="Save"/><br />
+</form>
+
+<!-- 
+<h3>Update TV</h3>
+<form action="/update" method="POST">
+    Id : 
+    <input type="text" name="Id" value="" /><br />
+    Brand :
+    <input type="text" name="Brand" value="" /><br />
+    Dimensions :
+    <input type="text" name="Dimensions" value="" /><br />
+    Price :
+    <input type="text" name="Price" value="" /><br />
+    Bought ?
+    <input type="text" name="Bought" value="" /><br />
+    Broken ?
+    <input type="text" name="Broken" value="" /><br />
+    Broken cause : 
+    <input type="text" name="Broken cause" value="" /><br />
+    <input type="submit" name="Save" value="Save"/><br />
+</form> -->
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
